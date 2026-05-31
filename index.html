@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Modal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="modalsection">
+        <div class="whitemodal">
+            <span>&times;</span>
+
+            <img src="" alt="">
+        </div>
+    </div>
+
+    <section class="itemsection">
+        <h3>Image Lightbox Gallery</h3>
+
+        <div class="main">
+
+            <div class="card">
+                <img src="https://cdn.pixabay.com/photo/2021/01/06/21/50/couple-5895730__480.jpg" alt="">
+            </div>
+
+            <div class="card">
+                <img src="https://cdn.pixabay.com/photo/2022/03/31/00/31/music-7101987__480.jpg" alt="">
+            </div>
+
+            <div class="card">
+                <img src="https://cdn.pixabay.com/photo/2017/06/27/14/20/couple-2447450__480.jpg" alt="">
+            </div>
+
+            <div class="card">
+                <img src="https://cdn.pixabay.com/photo/2022/06/07/05/10/gardening-7247509__480.jpg" alt="">
+            </div>
+
+            <div class="card">
+                <img src="https://cdn.pixabay.com/photo/2014/04/07/16/51/leaves-318743__480.jpg" alt="">
+            </div>
+
+            <div class="card">
+                <img src="https://cdn.pixabay.com/photo/2023/01/05/15/23/leaves-7699185__480.jpg" alt="">
+            </div>
+
+            <div class="card">
+                <img src="https://cdn.pixabay.com/photo/2021/01/06/21/50/couple-5895730__480.jpg" alt="">
+            </div>
+
+            <div class="card">
+                <img src="https://cdn.pixabay.com/photo/2017/06/27/14/20/couple-2447450__480.jpg" alt="">
+            </div>
+
+        </div>
+    </section>
+</body>
+<script>
+
+    let modalsection = document.querySelector(".modalsection")
+    let modalimg = document.querySelector(".whitemodal img")
+    let mainelement = document.querySelector(".main")
+    let closed = document.querySelector(".whitemodal span")
+
+    mainelement.addEventListener("click", (e) => {
+
+        if (e.target.tagName == "IMG") {
+
+            let clickpath = e.target.src
+
+            modalsection.classList.add("showmodal")
+
+            modalimg.src = clickpath
+        }
+
+    })
+    closed.addEventListener("click", () => {
+
+        modalsection.classList.remove("showmodal")
+
+    })
+    modalsection.addEventListener("click", (e) => {
+
+        if (e.target == modalsection) {
+
+            modalsection.classList.remove("showmodal")
+        }
+
+    })
+
+</script>
+
+</html>
